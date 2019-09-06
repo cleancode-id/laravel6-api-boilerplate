@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\User as UserResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return [
-        'app' => 'Laravel',
+        'app' => config('app.name'),
         'version' => '1.0.0',
     ];
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/me', function (Request $request) {
-        return $request->user();
+        return new UserResource($request->user());
     });
 });
 
