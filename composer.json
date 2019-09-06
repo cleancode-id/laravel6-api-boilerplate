@@ -1,10 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "cleancode-id/laravel6-api-boilerplate",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A Laravel 6 (LTS) Backend API starter project kit template/boilerplate.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "backend",
+        "api"
     ],
     "license": "MIT",
     "require": {

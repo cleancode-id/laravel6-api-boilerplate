@@ -1,6 +1,6 @@
-# Laravel 6 Backend API Boilerplate
+# Laravel 6 (LTS) Backend API Boilerplate
 
-> A Laravel 6 Backend API starter project kit template/boilerplate.
+> A Laravel 6 (LTS) Backend API starter project kit template/boilerplate.
 
 <p align="center">
 <img src="https://i.imgur.com/cD5HXGF.png">
