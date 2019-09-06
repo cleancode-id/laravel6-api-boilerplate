@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/me', function (Request $request) {
+    Route::get('auth/me', function (Request $request) {
         return new UserResource($request->user());
     });
 });
