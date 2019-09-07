@@ -20,7 +20,6 @@ class LoginTest extends TestCase
     }
 
     /** @test
-     * @throws \Spatie\ModelStatus\Exceptions\InvalidStatus
      */
     public function authenticate()
     {
