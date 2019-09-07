@@ -7,18 +7,19 @@
 > A Laravel 6 (LTS) Backend API starter project kit template/boilerplate.
 
 <p align="center">
-<img src="https://i.imgur.com/cD5HXGF.png">
+<img src="https://i.imgur.com/Q42XOKH.png">
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/auFPkkL.png">
+<img src="https://i.imgur.com/Pc2f4PG.png">
 </p>
 
 ## Features
 
 - Laravel 6 (Long-term support/LTS)
+- Optimized for API Backend (without UI/views)
 - Authentication with JWT
-- Register, Login, Reset Password
+- Basic Features: Register, Login, Forgot Password, Update Profile & Password
 - Unit & Feature Test
 - Standard Coding Style & Clean Code
 - Role & Permission (To Do)
@@ -33,6 +34,7 @@
 
 ## Usage
 - Postman API Documentation Starter Kit https://documenter.getpostman.com/view/25676/SVfWN6KH
+- Run Unit & Feature Test `php vendor/bin/phpunit`
 
 ## Credits
 - Inspired from https://github.com/cretueusebiu/laravel-vue-spa
