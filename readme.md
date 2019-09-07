@@ -21,7 +21,7 @@
 
 ## Installation
 
-- Clone this repository
+- Run `composer create-project --prefer-dist cleancode-id/laravel6-api-boilerplate`
 - Edit `.env` and set your database connection details
 - Run `php artisan key:generate` and `php artisan jwt:secret`
 - Run `php artisan migrate:fresh --seed`
