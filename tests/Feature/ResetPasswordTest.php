@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
-use App\Notifications\ResetPassword;
 use App\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
+use Illuminate\Support\Facades\DB;
+use App\Notifications\ResetPassword;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ResetPasswordTest extends TestCase
