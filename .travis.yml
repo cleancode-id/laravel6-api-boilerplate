@@ -1,0 +1,27 @@
+sudo: required
+language: php
+dist: trusty
+
+# Keep the cache between builds to speed up installs
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 7.2
+  - 7.3
+
+services:
+  - mysql
+
+install:
+  - cp .env.example .env
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest
+  - php artisan key:generate --ansi
+  - php artisan jwt:secret --force --ansi
+
+script:
+  - vendor/bin/phpunit
+
+notifications:
+  email: false
