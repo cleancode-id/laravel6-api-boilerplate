@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('auth/me', function (Request $request) {
         return new UserResource($request->user());
     });
+
+    Route::patch('account/profile', 'Account\ProfileController@update');
+    Route::patch('account/password', 'Account\PasswordController@update');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
