@@ -16,8 +16,9 @@
 
 ## Features
 
-- Laravel 6.0 (LTS)
+- Laravel 6 (Long-term support/LTS)
 - Authentication with JWT
+- Register, Login, Reset Password
 - Unit & Feature Test
 - Standard Coding Style & Clean Code
 - Role & Permission (To Do)
