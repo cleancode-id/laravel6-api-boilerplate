@@ -18,6 +18,7 @@
 
 - Laravel 6 (Long-term support/LTS)
 - Optimized for API Backend (without UI/views)
+- Frontend Vue.js starter kit ready https://github.com/cleancode-id/laravel6-frontend-boilerplate 
 - Authentication with JWT
 - Basic Features: Register, Login, Forgot Password, Update Profile & Password
 - Unit & Feature Test
