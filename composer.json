@@ -14,7 +14,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "tymon/jwt-auth": "dev-feature/laravel-6-support#0be3f2811dee67b63c756ca44d2a1eea0a910982"
+        "tymon/jwt-auth": "1.0.0-rc.5"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
@@ -23,12 +23,6 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/MatanYadaev/jwt-auth"
-        }
-    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
