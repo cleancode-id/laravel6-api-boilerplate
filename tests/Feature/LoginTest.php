@@ -2,14 +2,14 @@
 
 namespace Tests\Feature;
 
-use App\User;
+use App\Entities\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
 {
-    /** @var \App\User */
+    /** @var \App\Entities\User */
     protected $user;
 
     public function setUp(): void

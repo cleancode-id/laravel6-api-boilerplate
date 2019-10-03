@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\User;
+use App\Entities\User;
 use Tests\TestCase;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\ResetPassword;
@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ResetPasswordTest extends TestCase
 {
-    /** @var \App\User */
+    /** @var \App\Entities\User */
     protected $user;
 
     public function setUp(): void
