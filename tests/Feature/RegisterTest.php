@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Entities\User;
 use Tests\TestCase;
+use App\Entities\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

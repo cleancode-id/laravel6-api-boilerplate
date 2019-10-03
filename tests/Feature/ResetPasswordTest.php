@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Entities\User;
 use Tests\TestCase;
+use App\Entities\User;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Hash;
