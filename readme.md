@@ -16,7 +16,7 @@
 
 ## Features
 
-- Laravel 6 (latest v6.1) (Long-term support/LTS)
+- Laravel 6 (latest v6.3) (Long-term support/LTS)
 - Optimized for API Backend (without UI/views)
 - Frontend Vue.js starter kit ready https://github.com/cleancode-id/laravel6-frontend-boilerplate 
 - Authentication with JWT
