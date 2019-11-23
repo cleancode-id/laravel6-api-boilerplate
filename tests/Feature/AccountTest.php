@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use App\Entities\User;
 use Illuminate\Support\Facades\Hash;
+use Tests\TestCase;
 
 class AccountTest extends TestCase
 {

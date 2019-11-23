@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Account;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User as UserResource;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
