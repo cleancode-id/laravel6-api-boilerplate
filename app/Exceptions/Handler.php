@@ -3,7 +3,13 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +52,52 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+//        return parent::render($request, $exception);
+        $rendered = parent::render($request, $exception);
+
+        if ($exception instanceof ValidationException) {
+            $json = [
+                'error' => $exception->validator->errors(),
+                'status_code' => $rendered->getStatusCode()
+            ];
+        } elseif ($exception instanceof AuthorizationException) {
+            $json = [
+                'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
+        } elseif ($exception instanceof UnauthorizedHttpException) {
+            // detect previous instance
+            if ($exception->getPrevious() instanceof TokenExpiredException) {
+                $json = [
+                    'error' => 'TOKEN_EXPIRED',
+                    'status_code' => $exception->getStatusCode()
+                ];
+            } else if ($exception->getPrevious() instanceof TokenInvalidException) {
+                $json = [
+                    'error' => 'TOKEN_INVALID',
+                    'status_code' => $exception->getStatusCode()
+                ];
+            } else if ($exception->getPrevious() instanceof TokenBlacklistedException) {
+                $json = [
+                    'error' => 'TOKEN_BLACKLISTED',
+                    'status_code' => $exception->getStatusCode()
+                ];
+            } else {
+                $json = [
+                    'error' => 'UNAUTHENTICATED',
+                    'status_code' => $exception->getStatusCode()
+                ];
+            }
+        } else {
+            // Default to vague error to avoid revealing sensitive information
+            $json = [
+                'error' => (app()->environment() !== 'production')
+                    ? $exception->getMessage()
+                    : 'An error has occurred.',
+                'status_code' => $exception->getCode()
+            ];
+        }
+
+        return response()->json($json, $rendered->getStatusCode());
     }
 }
