@@ -18,12 +18,6 @@ class ProfileController extends Controller
     public function update(ProfileUpdateRequest $request)
     {
         $user = $request->user();
-
-//        $this->validate($request, [
-//            'name' => 'required',
-//            'email' => 'required|email|unique:users,email,'.$user->id,
-//        ]);
-
         $user->update($request->only('name', 'email'));
 
         return new UserResource($user);
