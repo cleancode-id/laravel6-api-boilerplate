@@ -22,7 +22,7 @@ Route::get('/', function () {
     ];
 });
 
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => 'jwt.verify'], function () {
     Route::get('auth/me', function (Request $request) {
         return new UserResource($request->user());
     });
